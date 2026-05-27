@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>IC_TERMINAL — The institutional research layer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css?v=nav43" />
+
+<template id="__bundler_thumbnail" data-bg-color="#000000">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#000"/>
+    <g transform="translate(600 400)">
+      <line x1="-280" y1="0" x2="280" y2="0" stroke="#4d9fff" stroke-width="1" opacity="0.5"/>
+      <circle cx="-240" cy="0" r="5" fill="#4d9fff" opacity="0.4"/>
+      <circle cx="-180" cy="0" r="5" fill="#4d9fff" opacity="0.5"/>
+      <circle cx="-120" cy="0" r="5" fill="#4d9fff" opacity="0.6"/>
+      <circle cx="-60"  cy="0" r="5" fill="#4d9fff" opacity="0.75"/>
+      <circle cx="0"    cy="0" r="8" fill="#4d9fff"/>
+      <circle cx="60"   cy="0" r="5" fill="#4d9fff" opacity="0.75"/>
+      <circle cx="120"  cy="0" r="5" fill="#4d9fff" opacity="0.6"/>
+      <circle cx="180"  cy="0" r="5" fill="#4d9fff" opacity="0.5"/>
+      <circle cx="240"  cy="0" r="5" fill="#4d9fff" opacity="0.4"/>
+      <text x="0" y="-60" text-anchor="middle" font-family="ui-monospace,monospace" font-size="22" letter-spacing="6" fill="#9aa3ad">IC_TERMINAL</text>
+      <text x="0" y="70" text-anchor="middle" font-family="ui-monospace,monospace" font-size="12" letter-spacing="6" fill="#5a6470">AGENTIC&#160;DILIGENCE&#160;LAYER</text>
+    </g>
+  </svg>
+</template>
+</head>
+<body>
+
+<!-- ────────────────────────  NAV  (floating glass capsules, sticky on scroll)  ──────────────────────── -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#top" class="nav__brand nav__capsule" aria-label="IC_TERMINAL">
+      <img src="assets/logo-glow.png" alt="IC_TERMINAL" class="nav__logo" />
+    </a>
+    <div class="nav__right nav__capsule">
+      <a href="#cta" class="nav__cta">Book&nbsp;a&nbsp;demo<span class="nav__cta-arrow">↗</span></a>
+      <button class="nav__icon nav__menu-btn" type="button" aria-label="Menu" aria-expanded="false" id="nav-menu-btn">
+        <span class="nav__menu-bar"></span>
+        <span class="nav__menu-bar"></span>
+      </button>
+    </div>
+    <nav class="nav__panel" id="nav-panel" aria-label="Sections" hidden>
+      <a href="#process">Process</a>
+      <a href="#surface">Surface</a>
+      <a href="#demo">Demo</a>
+      <a href="#output">Output</a>
+      <a href="mailto:demo@icterminal.com">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ──────────────────────  HERO / 01  (2 rotating phrases, no CTAs)  ────────────────────── -->
+<section class="scene hero" data-scene="01" data-screen-label="01 Hero">
+  <video class="hero__video" src="assets/hero-bg.mp4" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+  <div class="hero__veil" aria-hidden="true"></div>
+  <div class="hero__fade" aria-hidden="true"></div>
+
+  <div class="hero__corner mono" aria-hidden="true"><span style="visibility: hidden">OPENING&nbsp;·&nbsp;01</span></div>
+
+  <div class="hero__inner">
+    <div class="rotator" id="rotator" aria-live="polite" aria-atomic="true">
+      <div class="rotator__slot" data-phrase="0" style="font-size: 110px">
+        <span class="phrase__line">The institutional</span>
+        <span class="phrase__line phrase__line--serif">research layer.</span>
+      </div>
+      <div class="rotator__slot" data-phrase="1" style="font-size: 110px">
+        <span class="phrase__line">Made possible</span>
+        <span class="phrase__line phrase__line--serif">by agentic AI.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__foot mono">
+    <span>SIGNAL.OK</span><span class="sep">·</span>
+    <span>NINE&nbsp;AGENTS&nbsp;ONLINE</span><span class="sep">·</span>
+    <span>EVIDENCE.GRAPH&nbsp;LIVE</span>
+  </div>
+</section>
+
+<!-- ──────────────────────  TENSION / 02  (sequential reveals + smoke)  ────────────────────── -->
+<section class="scene problem reveal-host" id="problem" data-scene="02" data-screen-label="02 Tension">
+  <h2 class="problem__title reveal-item" style="--i:1">Investment diligence
+still begins with&nbsp;<span class="problem__title--serif">fragments.</span></h2>
+
+  <div class="problem__counter" aria-hidden="true">07</div>
+
+  <ul class="problem__inputs mono">
+    <li class="problem__inputs-item reveal-item" style="--i:3">Decks</li>
+    <li class="problem__inputs-item reveal-item" style="--i:5">Websites</li>
+    <li class="problem__inputs-item reveal-item" style="--i:7">Founder claims</li>
+    <li class="problem__inputs-item reveal-item" style="--i:9">Market noise</li>
+    <li class="problem__inputs-item reveal-item" style="--i:11">Partial metrics</li>
+    <li class="problem__inputs-item reveal-item" style="--i:13">Scattered notes</li>
+    <li class="problem__inputs-item reveal-item" style="--i:15">Unanswered questions</li>
+  </ul>
+
+  <div class="problem__quote">
+    <p class="problem__quote-top reveal-item" style="--i:1">
+      The most important question is <span class="hl-soft">not</span> what the IC&nbsp;knows.
+    </p>
+    <p class="problem__quote-bottom smoke-in" style="--i:12">
+      <span class="lead">It's</span> <em>what the analysts did not think to <span class="hl-check">check.</span></em>
+    </p>
+  </div>
+</section>
+
+<!-- ──────────────────────  PROCESS / 03  (animation as section background)  ────────────────────── -->
+<section class="scene process reveal-host" id="process" data-scene="03" data-screen-label="03 Process">
+
+  <div class="process__bg" aria-hidden="true">
+    <video class="process__anim process__anim--base" autoplay loop muted playsinline preload="auto">
+      <source src="assets/logo-loop.webm" type="video/webm" />
+      <source src="assets/logo-loop.mp4" type="video/mp4" />
+    </video>
+    <video class="process__anim process__anim--boost" autoplay loop muted playsinline preload="auto" style="filter: brightness(1.7) contrast(1.12); -webkit-mask-image: linear-gradient(180deg, transparent 0%, transparent 68%, #000 88%, #000 100%); mask-image: linear-gradient(180deg, transparent 0%, transparent 68%, #000 88%, #000 100%); -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-size: 100% 100%; mask-size: 100% 100%; z-index: 1;">
+      <source src="assets/logo-loop.webm" type="video/webm" />
+      <source src="assets/logo-loop.mp4" type="video/mp4" />
+    </video>
+    <div class="process__bg-veil"></div>
+  </div>
+
+  <header class="process__centerpiece">
+    <h2 class="title title--xl process__center-title">
+      <span class="process__head-l1 smoke-in" style="--i:2">From fragmented inputs</span>
+      <span class="title--serif smoke-in" style="--i:10">to IC-ready conviction.</span>
+    </h2>
+  </header>
+
+  <div class="process__grid">
+
+    <div class="process__copy">
+      <ol class="process__list">
+        <li class="prc">
+          <span class="prc__num mono">01</span>
+          <div class="prc__body">
+            <h3 class="prc__title">Input <span class="prc__meta mono">deck · URL · notes · claims</span></h3>
+            <p class="prc__copy">Material is captured as claims to be tested, not conclusions to accept.</p>
+          </div>
+        </li>
+        <li class="prc">
+          <span class="prc__num mono">02</span>
+          <div class="prc__body">
+            <h3 class="prc__title">Investigation <span class="prc__meta mono">parallel agents · primary sources</span></h3>
+            <p class="prc__copy">Agents test every claim across market, product, technical, traction, team, and risk.</p>
+          </div>
+        </li>
+        <li class="prc">
+          <span class="prc__num mono">03</span>
+          <div class="prc__body">
+            <h3 class="prc__title">Modeling <span class="prc__meta mono">multiple scenarios stress-tested</span></h3>
+            <p class="prc__copy">Economics and assumptions are modelled under bear, base, and bull conditions.</p>
+          </div>
+        </li>
+        <li class="prc">
+          <span class="prc__num mono">04</span>
+          <div class="prc__body">
+            <h3 class="prc__title">IC&nbsp;Output <span class="prc__meta mono">ready for partner vote</span></h3>
+            <p class="prc__copy">Conviction score, evidence ledger, open risks, and decision-changing questions.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+  </div>
+</section>
+
+<!-- ──────────────────────  PROCESS DETAIL / 03b — Input · Agents · Modeling  ────────────────────── -->
+<section class="scene pdetail" id="process-detail" data-scene="03b" data-screen-label="03b Process detail">
+  <div class="pgrid">
+
+    <!-- 01 INPUT -->
+    <figure class="pgrid__scr pgrid__scr--input">
+      <div class="pgrid__chrome mono"><span>INPUT</span><span class="pgrid__dot"></span></div>
+      <div class="pgrid__body">
+        <label class="pgrid__field">
+          <span class="pgrid__label mono">DECK</span>
+          <span class="pgrid__drop mono"><span class="pgrid__drop-icon" aria-hidden="true">↑</span>drop deck.pdf</span>
+        </label>
+        <label class="pgrid__field">
+          <span class="pgrid__label mono">URL</span>
+          <span class="pgrid__input mono">https://company.io</span>
+        </label>
+        <label class="pgrid__field">
+          <span class="pgrid__label mono">BRIEF</span>
+          <span class="pgrid__input pgrid__input--multi mono">Founders previously shipped infra…</span>
+        </label>
+      </div>
+    </figure>
+
+    <!-- 02 AGENTS -->
+    <figure class="pgrid__scr pgrid__scr--agents">
+      <div class="pgrid__chrome mono"><span>9 AGENTS // PARALLEL</span><span class="pgrid__dot"></span></div>
+      <div class="pgrid__body pgrid__body--agents">
+        <svg class="pgrid__graph" viewBox="0 0 360 220" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="pgridAgentNode" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#7fb6ff" stop-opacity="0.95"/>
+              <stop offset="100%" stop-color="#4d9fff" stop-opacity="0.15"/>
+            </radialGradient>
+          </defs>
+          <g stroke="rgba(255,255,255,0.18)" stroke-width="0.55" fill="none">
+            <path d="M30 110 L120 30"/><path d="M30 110 L120 64"/><path d="M30 110 L120 98"/>
+            <path d="M30 110 L120 132"/><path d="M30 110 L120 166"/><path d="M30 110 L120 200"/>
+            <path d="M30 110 L230 30"/><path d="M30 110 L230 132"/><path d="M30 110 L230 200"/>
+            <path d="M120 30 L330 110"/><path d="M120 64 L330 110"/><path d="M120 98 L330 110"/>
+            <path d="M120 132 L330 110"/><path d="M120 166 L330 110"/><path d="M120 200 L330 110"/>
+            <path d="M230 30 L330 110"/><path d="M230 132 L330 110"/><path d="M230 200 L330 110"/>
+          </g>
+          <g font-family="ui-monospace,monospace" font-size="7" fill="rgba(255,255,255,0.55)" letter-spacing="0.10em">
+            <circle cx="30" cy="110" r="5" fill="rgba(255,255,255,0.10)" stroke="rgba(255,255,255,0.4)" stroke-width="0.6"/>
+            <circle cx="330" cy="110" r="5" fill="rgba(255,255,255,0.10)" stroke="rgba(255,255,255,0.4)" stroke-width="0.6"/>
+          </g>
+          <g font-family="ui-monospace,monospace" font-size="7" fill="rgba(255,255,255,0.82)" letter-spacing="0.06em">
+            <g><circle cx="120" cy="30" r="5.5" fill="url(#pgridAgentNode)"/><text x="131" y="32">MARKET</text></g>
+            <g><circle cx="120" cy="64" r="5.5" fill="url(#pgridAgentNode)"/><text x="131" y="66">COMPETITORS</text></g>
+            <g><circle cx="120" cy="98" r="5.5" fill="url(#pgridAgentNode)"/><text x="131" y="100">TECHNICAL</text></g>
+            <g><circle cx="120" cy="132" r="5.5" fill="url(#pgridAgentNode)"/><text x="131" y="134">PRODUCT</text></g>
+            <g><circle cx="120" cy="166" r="5.5" fill="url(#pgridAgentNode)"/><text x="131" y="168">TRACTION</text></g>
+            <g><circle cx="230" cy="30" r="5.5" fill="url(#pgridAgentNode)"/><text x="241" y="32">ECONOMICS</text></g>
+            <g><circle cx="230" cy="132" r="5.5" fill="url(#pgridAgentNode)"/><text x="241" y="134">TEAM</text></g>
+            <g><circle cx="120" cy="200" r="5.5" fill="url(#pgridAgentNode)"/><text x="131" y="202">RISK</text></g>
+            <g><circle cx="230" cy="200" r="5.5" fill="url(#pgridAgentNode)"/><text x="241" y="202">SYNTHESIS</text></g>
+          </g>
+        </svg>
+      </div>
+    </figure>
+
+    <!-- 03 MODELING -->
+    <figure class="pgrid__scr pgrid__scr--model">
+      <div class="pgrid__chrome mono"><span>3 SCENARIOS</span><span class="pgrid__dot"></span></div>
+      <div class="pgrid__body pgrid__body--model">
+        <div class="pgrid__scen-head mono">
+          <span></span><span>ARR ’28</span><span>BURN</span><span>MGN</span>
+        </div>
+        <div class="pgrid__scen-row pgrid__scen-row--bear mono">
+          <span class="pgrid__scen-tag">BEAR</span>
+          <span class="pgrid__scen-val">$18M</span>
+          <span class="pgrid__scen-val">2.4×</span>
+          <span class="pgrid__scen-val">58%</span>
+        </div>
+        <div class="pgrid__scen-row pgrid__scen-row--base mono">
+          <span class="pgrid__scen-tag">BASE</span>
+          <span class="pgrid__scen-val">$42M</span>
+          <span class="pgrid__scen-val">1.3×</span>
+          <span class="pgrid__scen-val">71%</span>
+        </div>
+        <div class="pgrid__scen-row pgrid__scen-row--bull mono">
+          <span class="pgrid__scen-tag">BULL</span>
+          <span class="pgrid__scen-val">$88M</span>
+          <span class="pgrid__scen-val">0.7×</span>
+          <span class="pgrid__scen-val">78%</span>
+        </div>
+        <div class="pgrid__bars" aria-hidden="true">
+          <div class="pgrid__bar pgrid__bar--bear"><span style="--w:22%"></span><em class="mono">BEAR</em></div>
+          <div class="pgrid__bar pgrid__bar--base"><span style="--w:52%"></span><em class="mono">BASE</em></div>
+          <div class="pgrid__bar pgrid__bar--bull"><span style="--w:96%"></span><em class="mono">BULL</em></div>
+        </div>
+      </div>
+    </figure>
+
+  </div>
+</section>
+
+<script>
+  // Trigger bar fills when the process-detail section enters the viewport
+  (function () {
+    var sec = document.getElementById('process-detail');
+    if (!sec) return;
+    if (!('IntersectionObserver' in window)) { sec.classList.add('is-on'); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { sec.classList.add('is-on'); io.disconnect(); }
+      });
+    }, { threshold: 0.25 });
+    io.observe(sec);
+  })();
+</script>
+
+<!-- ──────────────────────  SURFACE / 05  ────────────────────── -->
+<section class="scene surface reveal-host" id="surface" data-scene="05" data-screen-label="05 Surface">
+  <header class="surface__head">
+    <span class="eyebrow mono reveal-item" style="--i:0" aria-hidden="true">A · RESEARCH ARCHITECTURE</span>
+    <h2 class="title title--xl surface__title reveal-item" style="--i:1">
+      <span class="surface__line surface__line--lead">Nine specialised agents.</span>
+      <span class="surface__line surface__line--sub">One research architecture.</span>
+      <span class="surface__title-gap" aria-hidden="true"></span>
+      <span class="surface__line surface__line--lead">Shared evidence.</span>
+      <span class="surface__line surface__line--sub">No silos.</span>
+    </h2>
+  </header>
+
+  <div class="hspine reveal-item" style="--i:5">
+    <div class="hspine__head">
+      <span class="hspine__head-label mono">AGENTIC&nbsp;DILIGENCE&nbsp;LAYER</span>
+      <span class="hspine__head-rule" aria-hidden="true"></span>
+    </div>
+
+    <ol class="hspine__nodes" role="tablist" aria-label="Diligence agents">
+      <div class="hspine__cta" aria-hidden="true">
+        <span class="hspine__cta-text mono">Select an agent to see what it investigates</span>
+        <svg class="hspine__cta-arrow" viewBox="0 0 24 28" fill="none">
+          <path d="M12 4 L12 26 M5 19 L12 26 L19 19" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <li class="hspine__col is-active" role="tab" aria-selected="true" tabindex="0" data-i="0" data-id="A.01" data-name="Market" data-desc="Sizes the addressable market from primary sources. Tests TAM claims. Maps adjacent demand pools.">
+        <span class="hspine__id mono">A.01</span>
+        <span class="hspine__node" aria-hidden="true"></span>
+        <span class="hspine__name">Market</span>
+        <span class="hspine__phrase">TAM claims. Demand pools.</span>
+      </li>
+      <li class="hspine__col" role="tab" aria-selected="false" tabindex="0" data-i="1" data-id="A.02" data-name="Competitors" data-desc="Builds the live competitor map. Tracks funding posture. Isolates defensible wedges and overlap risk.">
+        <span class="hspine__id mono">A.02</span>
+        <span class="hspine__node" aria-hidden="true"></span>
+        <span class="hspine__name">Competitors</span>
+        <span class="hspine__phrase">Overlap and wedges.</span>
+      </li>
+      <li class="hspine__col" role="tab" aria-selected="false" tabindex="0" data-i="2" data-id="A.03" data-name="Technical" data-desc="Reviews architecture claims, dependency risk, and the gap between marketing language and shipping code.">
+        <span class="hspine__id mono">A.03</span>
+        <span class="hspine__node" aria-hidden="true"></span>
+        <span class="hspine__name">Technical</span>
+        <span class="hspine__phrase">Architecture, dependencies.</span>
+      </li>
+      <li class="hspine__col" role="tab" aria-selected="false" tabindex="0" data-i="3" data-id="A.04" data-name="Product" data-desc="Walks the product like a user. Scores feature depth. Where the demo ends and the product begins.">
+        <span class="hspine__id mono">A.04</span>
+        <span class="hspine__node" aria-hidden="true"></span>
+        <span class="hspine__name">Product</span>
+        <span class="hspine__phrase">Demo depth, usability.</span>
+      </li>
+      <li class="hspine__col" role="tab" aria-selected="false" tabindex="0" data-i="4" data-id="A.05" data-name="Traction" data-desc="Reconstructs growth from primary signals. Triangulates the numbers that matter — not founder narration.">
+        <span class="hspine__id mono">A.05</span>
+        <span class="hspine__node" aria-hidden="true"></span>
+        <span class="hspine__name">Traction</span>
+        <span class="hspine__phrase">Growth, cohorts, retention.</span>
+      </li>
+      <li class="hspine__col" role="tab" aria-selected="false" tabindex="0" data-i="5" data-id="A.06" data-name="Economics" data-desc="Models pricing, retention, CAC, margins and unit economics across scenarios. Uncertainty stays visible.">
+        <span class="hspine__id mono">A.06</span>
+        <span class="hspine__node" aria-hidden="true"></span>
+        <span class="hspine__name">Economics</span>
+        <span class="hspine__phrase">Pricing, CAC, margins.</span>
+      </li>
+      <li class="hspine__col" role="tab" aria-selected="false" tabindex="0" data-i="6" data-id="A.07" data-name="Team" data-desc="Builds the operator graph. Prior roles, outcomes, collaborators, founder–market fit, and what the CV omits.">
+        <span class="hspine__id mono">A.07</span>
+        <span class="hspine__node" aria-hidden="true"></span>
+        <span class="hspine__name">Team</span>
+        <span class="hspine__phrase">Operators, outcomes.</span>
+      </li>
+      <li class="hspine__col" role="tab" aria-selected="false" tabindex="0" data-i="7" data-id="A.08" data-name="Risk" data-desc="Adversarial. Searches for disconfirming evidence — regulatory, structural, narrative, execution.">
+        <span class="hspine__id mono">A.08</span>
+        <span class="hspine__node" aria-hidden="true"></span>
+        <span class="hspine__name">Risk</span>
+        <span class="hspine__phrase">Failure modes, disconfirmation.</span>
+      </li>
+      <li class="hspine__col" role="tab" aria-selected="false" tabindex="0" data-i="8" data-id="A.09" data-name="IC Narrative" data-desc="Compresses the research surface into the IC memo. Conclusions earn their place; every claim is sourced.">
+        <span class="hspine__id mono">A.09</span>
+        <span class="hspine__node" aria-hidden="true"></span>
+        <span class="hspine__name">IC Narrative</span>
+        <span class="hspine__phrase">What changes the decision.</span>
+      </li>
+    </ol>
+
+    <svg class="hspine__route" aria-hidden="true">
+      <path class="hspine__route-path" d=""></path>
+      <circle class="hspine__route-elbow" cx="0" cy="0" r="2.5"></circle>
+    </svg>
+
+    <aside class="hspine__detail" aria-live="polite">
+      <div class="hspine__detail-meta mono">
+        <span class="hspine__detail-id">A.01</span>
+        <span class="hspine__detail-sep">/</span>
+        <span class="hspine__detail-tag">AGENT</span>
+      </div>
+      <h3 class="hspine__detail-title">Market</h3>
+      <p class="hspine__detail-text">Sizes the addressable market from primary sources. Tests TAM claims. Maps adjacent demand pools.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ──────────────────────  DEMO / 06 — full-width spread (option D)  ────────────────────── -->
+<section class="scene demo demo--spread reveal-host" id="demo" data-scene="06" data-screen-label="06 Demo">
+  <h2 class="title demo__title reveal-item" style="--i:1">
+    See the framework <span class="title--serif">in action.</span>
+  </h2>
+
+  <figure class="demo__stage reveal-item" style="--i:3">
+    <div class="demo__chrome mono">
+      <span class="demo__rec"><span class="dot dot--red"></span>FRAMEWORK&nbsp;DEMO&nbsp;RUNNING</span>
+      <span class="demo__meta">ic_terminal.session&nbsp;·&nbsp;<span id="demo-time">00:00</span>&nbsp;·&nbsp;loop</span>
+    </div>
+    <div class="demo__wrap demo__wrap--sim">
+      <div class="dsim" id="demo-sim" aria-label="IC_TERMINAL framework simulation, looping through 9 agents">
+
+        <!-- Top rail: 9 phase pips -->
+        <ol class="dsim__rail mono" id="ds-rail" role="tablist" aria-label="Agent phases">
+          <li class="dsim__pip is-active" data-i="0"><span class="dsim__pip-id">A.01</span><span class="dsim__pip-name">Market</span></li>
+          <li class="dsim__pip" data-i="1"><span class="dsim__pip-id">A.02</span><span class="dsim__pip-name">Competitors</span></li>
+          <li class="dsim__pip" data-i="2"><span class="dsim__pip-id">A.03</span><span class="dsim__pip-name">Technical</span></li>
+          <li class="dsim__pip" data-i="3"><span class="dsim__pip-id">A.04</span><span class="dsim__pip-name">Product</span></li>
+          <li class="dsim__pip" data-i="4"><span class="dsim__pip-id">A.05</span><span class="dsim__pip-name">Traction</span></li>
+          <li class="dsim__pip" data-i="5"><span class="dsim__pip-id">A.06</span><span class="dsim__pip-name">Economics</span></li>
+          <li class="dsim__pip" data-i="6"><span class="dsim__pip-id">A.07</span><span class="dsim__pip-name">Team</span></li>
+          <li class="dsim__pip" data-i="7"><span class="dsim__pip-id">A.08</span><span class="dsim__pip-name">Risk</span></li>
+          <li class="dsim__pip" data-i="8"><span class="dsim__pip-id">A.09</span><span class="dsim__pip-name">IC&nbsp;Narrative</span></li>
+        </ol>
+
+        <!-- Main body: agent meta | viz + feed -->
+        <div class="dsim__body">
+
+          <div class="dsim__agent">
+            <span class="dsim__agent-id mono" id="ds-aid">A.01</span>
+            <h3 class="dsim__agent-name" id="ds-aname">Market</h3>
+            <p class="dsim__agent-desc" id="ds-adesc">Sizes the addressable market from primary sources. Tests TAM claims. Maps adjacent demand pools.</p>
+
+            <div class="dsim__status mono">
+              <span class="dsim__status-dot" aria-hidden="true"></span>
+              <span class="dsim__status-text" id="ds-status">scanning · primary sources</span>
+            </div>
+
+            <dl class="dsim__metrics mono">
+              <div><dt>SOURCES</dt><dd id="ds-src">0</dd></div>
+              <div><dt>EVIDENCE</dt><dd id="ds-ev">0</dd></div>
+              <div><dt>CHECKS</dt><dd id="ds-cc">0</dd></div>
+            </dl>
+          </div>
+
+          <div class="dsim__viz">
+            <div class="dsim__viz-head mono">
+              <span class="dsim__viz-tag" id="ds-tag">VIZ · TAM</span>
+              <span class="dsim__viz-rule" aria-hidden="true"></span>
+              <span class="dsim__viz-meta" id="ds-meta">live · 0042 nodes</span>
+            </div>
+            <div class="dsim__viz-stage" id="ds-stage" aria-hidden="true"></div>
+            <ul class="dsim__feed mono" id="ds-feed" aria-hidden="true"></ul>
+          </div>
+
+        </div>
+
+        <!-- Scan line overlay -->
+        <div class="dsim__scan" aria-hidden="true"></div>
+
+      </div>
+      <span class="cx cx--tl"></span><span class="cx cx--tr"></span><span class="cx cx--bl"></span><span class="cx cx--br"></span>
+    </div>
+  </figure>
+</section>
+
+<!-- ──────────────────────  MANIFESTO  (operating principle — sets up the output)  ────────────────────── -->
+<section class="scene manifesto reveal-host" data-scene="06b" data-screen-label="06b Manifesto">
+  <article class="plaque plaque--anim reveal-item" style="--i:1">
+    <span class="plaque__quote" aria-hidden="true">“</span>
+
+    <div class="plaque__head">Operating&nbsp;Principle</div>
+
+    <p class="plaque__line plaque__line--1">
+      <span class="plaque__strike">A summary is not diligence.<span class="plaque__strike-bar" aria-hidden="true"></span></span>
+    </p>
+
+    <p class="plaque__line plaque__line--2">Evidence attached to the conclusions <em class="plaque__is">is.</em></p>
+
+    <span class="plaque__quote plaque__quote--close" aria-hidden="true">”</span>
+  </article>
+</section>
+
+<!-- ──────────────────────  OUTPUT / 07  (dashboard)  ────────────────────── -->
+<section class="scene output reveal-host" id="output" data-scene="07" data-screen-label="07 Output">
+  <header class="output__head">
+    <h2 class="title title--xl output__statement reveal-item" style="--i:1">
+      The memo separates signal from story.<br />
+      <span class="title--serif">Facts. Risks. Drivers. Unanswered questions.</span>
+    </h2>
+  </header>
+
+  <article class="icm reveal-item" style="--i:5">
+
+    <header class="icm__band">
+      <div class="icm__band-left">
+        <div class="icm__meta mono">
+          <span class="icm__doctype">IC&nbsp;MEMO</span>
+          <span class="icm__sep" aria-hidden="true"></span>
+          <span>NORTHWIND_AI&nbsp;·&nbsp;Series&nbsp;A</span>
+          <span class="icm__sep" aria-hidden="true"></span>
+          <span>2026.05.18</span>
+        </div>
+        <h3 class="icm__lede">
+          We recommend leading the round at <em class="title--serif">$12M on $60M pre,</em> subject to two confirmations.
+        </h3>
+      </div>
+      <div class="icm__rec">
+        <span class="icm__rec-label mono">POSITION</span>
+        <p class="icm__rec-verdict">Proceed to partner vote.</p>
+        <span class="icm__rec-meta mono">CONVICTION&nbsp;0.68&nbsp;·&nbsp;7&nbsp;OPEN&nbsp;RISKS</span>
+      </div>
+    </header>
+
+    <div class="icm__body">
+
+      <article class="icm__prose">
+        <div class="icm__sect-head mono">Thesis</div>
+        <p>Northwind sells an evidence-grounded research workspace to credit and equities desks. ARR reached $2.1M in April<sup class="icm__ref">[01]</sup> against $0.5M a year prior, with 118% net retention across the eleven customers from its 2025 cohort<sup class="icm__ref">[02]</sup>. Three enterprise customers are paying above $300K ACV<sup class="icm__ref">[03]</sup>; the company has not lost a paying customer to a competitor.</p>
+
+        <div class="icm__sect-head mono">Why now</div>
+        <p>The window is the same window Glean and Hebbia rode, one layer up the stack: <em class="title--serif">domain-specific agents that cite their sources.</em> Buy-side desks are funding seats out of research budgets that were already approved<sup class="icm__ref">[04]</sup>, which keeps the sales cycle inside one quarter. Founders are ex-Palantir Foundry and ex-Stripe Atlas — distribution should not be the gating risk.</p>
+
+        <div class="icm__sect-head mono">What would change the recommendation</div>
+        <p>Two of the eleven paying customers are mid-evaluation against a horizontal competitor; loss of either would push top-3 concentration above 50%<sup class="icm__ref">[05]</sup>. We have asked for a reference call with both CIOs before close<sup class="icm__ref">[06]</sup>. Separately, the company is operating two product lines on fourteen engineers; we want a written commitment to wind down the consumer surface<sup class="icm__ref">[07]</sup> by Q3.</p>
+
+        <div class="icm__sect-head mono">Path to next round</div>
+        <p>$5.4M cash plus $12M new gives roughly 18 months at current burn<sup class="icm__ref">[08]</sup>. To clear a credible Series B, ARR needs to reach $8M with top-3 concentration under 30% and at least two named Fortune-500 logos in production.</p>
+      </article>
+
+      <aside class="icm__ledger">
+        <div class="icm__ledger-head">
+          <span class="icm__ledger-name mono">Evidence Ledger</span>
+          <span class="icm__ledger-meta mono">11&nbsp;claims&nbsp;·&nbsp;last sweep 05.18 04:12</span>
+        </div>
+        <div class="icm__ledger-sub">Every <span class="icm__ref icm__ref--inline">[n]</span> in the memo is a row here.</div>
+
+        <div class="icm__table">
+          <div class="icm__th">#</div>
+          <div class="icm__th">Claim · kind · verified</div>
+          <div class="icm__th">Sources</div>
+          <div class="icm__th">Conviction</div>
+          <div class="icm__th icm__th--r">Δ&nbsp;05.11</div>
+
+          <div class="icm__td icm__td--n">01</div>
+          <div class="icm__td icm__td--claim">
+            <span class="icm__claim">ARR $2.12M in April</span>
+            <span class="icm__claim-meta mono"><span class="icm__kind icm__kind--fact"><span class="icm__kdot" aria-hidden="true"></span>Fact</span><span class="icm__cdot">·</span><span>05.15</span></span>
+          </div>
+          <div class="icm__td"><span class="icm__src"><span class="icm__src-dots" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></span><span class="icm__src-n mono">42</span></span></div>
+          <div class="icm__td"><span class="icm__conv"><span class="icm__conv-bar" aria-hidden="true"><span class="icm__conv-fill" style="--p:.99; --c:var(--blue)"></span></span><span class="icm__conv-n mono">0.99</span></span></div>
+          <div class="icm__td icm__td--r mono icm__delta--neu">+0.00</div>
+
+          <div class="icm__td icm__td--n">02</div>
+          <div class="icm__td icm__td--claim">
+            <span class="icm__claim">NRR 118% across 11-of-11 cohort</span>
+            <span class="icm__claim-meta mono"><span class="icm__kind icm__kind--fact"><span class="icm__kdot" aria-hidden="true"></span>Fact</span><span class="icm__cdot">·</span><span>05.12</span></span>
+          </div>
+          <div class="icm__td"><span class="icm__src"><span class="icm__src-dots" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></span><span class="icm__src-n mono">11</span></span></div>
+          <div class="icm__td"><span class="icm__conv"><span class="icm__conv-bar" aria-hidden="true"><span class="icm__conv-fill" style="--p:.94; --c:var(--blue)"></span></span><span class="icm__conv-n mono">0.94</span></span></div>
+          <div class="icm__td icm__td--r mono icm__delta--up">+0.02</div>
+
+          <div class="icm__td icm__td--n">03</div>
+          <div class="icm__td icm__td--claim">
+            <span class="icm__claim">3 enterprise contracts ≥ $300K ACV</span>
+            <span class="icm__claim-meta mono"><span class="icm__kind icm__kind--fact"><span class="icm__kdot" aria-hidden="true"></span>Fact</span><span class="icm__cdot">·</span><span>05.09</span></span>
+          </div>
+          <div class="icm__td"><span class="icm__src"><span class="icm__src-dots" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></span><span class="icm__src-n mono">3</span></span></div>
+          <div class="icm__td"><span class="icm__conv"><span class="icm__conv-bar" aria-hidden="true"><span class="icm__conv-fill" style="--p:1; --c:var(--blue)"></span></span><span class="icm__conv-n mono">1.00</span></span></div>
+          <div class="icm__td icm__td--r mono icm__delta--neu">+0.00</div>
+
+          <div class="icm__td icm__td--n">04</div>
+          <div class="icm__td icm__td--claim">
+            <span class="icm__claim">Buy-side cycle 47 days, in-budget</span>
+            <span class="icm__claim-meta mono"><span class="icm__kind icm__kind--driver"><span class="icm__kdot" aria-hidden="true"></span>Driver</span><span class="icm__cdot">·</span><span>05.13</span></span>
+          </div>
+          <div class="icm__td"><span class="icm__src"><span class="icm__src-dots" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span></span><span class="icm__src-n mono">5</span></span></div>
+          <div class="icm__td"><span class="icm__conv"><span class="icm__conv-bar" aria-hidden="true"><span class="icm__conv-fill" style="--p:.78; --c:var(--blue)"></span></span><span class="icm__conv-n mono">0.78</span></span></div>
+          <div class="icm__td icm__td--r mono icm__delta--up">+0.04</div>
+
+          <div class="icm__td icm__td--n">05</div>
+          <div class="icm__td icm__td--claim">
+            <span class="icm__claim">Top-3 concentration 41% and rising</span>
+            <span class="icm__claim-meta mono"><span class="icm__kind icm__kind--driver"><span class="icm__kdot" aria-hidden="true"></span>Driver</span><span class="icm__cdot">·</span><span>05.15</span></span>
+          </div>
+          <div class="icm__td"><span class="icm__src"><span class="icm__src-dots" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span></span><span class="icm__src-n mono">8</span></span></div>
+          <div class="icm__td"><span class="icm__conv"><span class="icm__conv-bar" aria-hidden="true"><span class="icm__conv-fill" style="--p:.91; --c:var(--blue)"></span></span><span class="icm__conv-n mono">0.91</span></span></div>
+          <div class="icm__td icm__td--r mono icm__delta--dn">−0.04</div>
+
+          <div class="icm__td icm__td--n">06</div>
+          <div class="icm__td icm__td--claim">
+            <span class="icm__claim">Two paying customers in eval vs Glean</span>
+            <span class="icm__claim-meta mono"><span class="icm__kind icm__kind--risk"><span class="icm__kdot" aria-hidden="true"></span>Risk</span><span class="icm__cdot">·</span><span>05.15</span></span>
+          </div>
+          <div class="icm__td"><span class="icm__src"><span class="icm__src-dots" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span></span><span class="icm__src-n mono">4</span></span></div>
+          <div class="icm__td"><span class="icm__conv"><span class="icm__conv-bar" aria-hidden="true"><span class="icm__conv-fill" style="--p:.55; --c:var(--amber)"></span></span><span class="icm__conv-n mono">0.55</span></span></div>
+          <div class="icm__td icm__td--r mono icm__delta--dn">−0.12</div>
+
+          <div class="icm__td icm__td--n">07</div>
+          <div class="icm__td icm__td--claim">
+            <span class="icm__claim">Consumer SKU wind-down by Q3</span>
+            <span class="icm__claim-meta mono"><span class="icm__kind icm__kind--assume"><span class="icm__kdot" aria-hidden="true"></span>Assumption</span><span class="icm__cdot">·</span><span>05.11</span></span>
+          </div>
+          <div class="icm__td"><span class="icm__src"><span class="icm__src-dots" aria-hidden="true"><span class="on"></span><span></span><span></span><span></span><span></span></span><span class="icm__src-n mono">1</span></span></div>
+          <div class="icm__td"><span class="icm__conv"><span class="icm__conv-bar" aria-hidden="true"><span class="icm__conv-fill" style="--p:.35; --c:var(--red)"></span></span><span class="icm__conv-n mono">0.35</span></span></div>
+          <div class="icm__td icm__td--r mono icm__delta--up">+0.05</div>
+
+          <div class="icm__td icm__td--n">08</div>
+          <div class="icm__td icm__td--claim">
+            <span class="icm__claim">Cash $5.4M · burn $478K/mo</span>
+            <span class="icm__claim-meta mono"><span class="icm__kind icm__kind--fact"><span class="icm__kdot" aria-hidden="true"></span>Fact</span><span class="icm__cdot">·</span><span>04.30</span></span>
+          </div>
+          <div class="icm__td"><span class="icm__src"><span class="icm__src-dots" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></span><span class="icm__src-n mono">6</span></span></div>
+          <div class="icm__td"><span class="icm__conv"><span class="icm__conv-bar" aria-hidden="true"><span class="icm__conv-fill" style="--p:.98; --c:var(--blue)"></span></span><span class="icm__conv-n mono">0.98</span></span></div>
+          <div class="icm__td icm__td--r mono icm__delta--neu">+0.00</div>
+
+          <div class="icm__td icm__td--n">09</div>
+          <div class="icm__td icm__td--claim">
+            <span class="icm__claim">Pipeline $4M qualified, 1 in procurement</span>
+            <span class="icm__claim-meta mono"><span class="icm__kind icm__kind--driver"><span class="icm__kdot" aria-hidden="true"></span>Driver</span><span class="icm__cdot">·</span><span>05.14</span></span>
+          </div>
+          <div class="icm__td"><span class="icm__src"><span class="icm__src-dots" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></span><span class="icm__src-n mono">17</span></span></div>
+          <div class="icm__td"><span class="icm__conv"><span class="icm__conv-bar" aria-hidden="true"><span class="icm__conv-fill" style="--p:.62; --c:var(--amber)"></span></span><span class="icm__conv-n mono">0.62</span></span></div>
+          <div class="icm__td icm__td--r mono icm__delta--up">+0.08</div>
+
+          <div class="icm__td icm__td--n">10</div>
+          <div class="icm__td icm__td--claim">
+            <span class="icm__claim">Horizontal AI assistants encroaching</span>
+            <span class="icm__claim-meta mono"><span class="icm__kind icm__kind--risk"><span class="icm__kdot" aria-hidden="true"></span>Risk</span><span class="icm__cdot">·</span><span>05.08</span></span>
+          </div>
+          <div class="icm__td"><span class="icm__src"><span class="icm__src-dots" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></span><span class="icm__src-n mono">9</span></span></div>
+          <div class="icm__td"><span class="icm__conv"><span class="icm__conv-bar" aria-hidden="true"><span class="icm__conv-fill" style="--p:.41; --c:var(--red)"></span></span><span class="icm__conv-n mono">0.41</span></span></div>
+          <div class="icm__td icm__td--r mono icm__delta--dn">−0.03</div>
+
+          <div class="icm__td icm__td--last icm__td--n">11</div>
+          <div class="icm__td icm__td--last icm__td--claim">
+            <span class="icm__claim">Two product lines, 14 engineers</span>
+            <span class="icm__claim-meta mono"><span class="icm__kind icm__kind--risk"><span class="icm__kdot" aria-hidden="true"></span>Risk</span><span class="icm__cdot">·</span><span>05.11</span></span>
+          </div>
+          <div class="icm__td icm__td--last"><span class="icm__src"><span class="icm__src-dots" aria-hidden="true"><span class="on"></span><span class="on"></span><span></span><span></span><span></span></span><span class="icm__src-n mono">2</span></span></div>
+          <div class="icm__td icm__td--last"><span class="icm__conv"><span class="icm__conv-bar" aria-hidden="true"><span class="icm__conv-fill" style="--p:.70; --c:var(--blue)"></span></span><span class="icm__conv-n mono">0.70</span></span></div>
+          <div class="icm__td icm__td--last icm__td--r mono icm__delta--neu">+0.00</div>
+        </div>
+      </aside>
+
+    </div>
+
+    <footer class="icm__foot mono">
+      <span>312 sources&nbsp;·&nbsp;14,212 evidence nodes&nbsp;·&nbsp;1,284 cross-checks</span>
+      <span>memo regenerates on every new source&nbsp;·&nbsp;re-verify weekly</span>
+    </footer>
+
+  </article>
+
+  <ol class="manifesto__pillars reveal-item" style="--i:9">
+    <li class="manifesto__pillar">
+      <span class="manifesto__pillar-num mono">01</span>
+      <p class="manifesto__pillar-text">Checks claims <span class="title--serif">against evidence.</span></p>
+    </li>
+    <li class="manifesto__pillar">
+      <span class="manifesto__pillar-num mono">02</span>
+      <p class="manifesto__pillar-text">Surfaces <span class="title--serif">contradictions.</span></p>
+    </li>
+    <li class="manifesto__pillar">
+      <span class="manifesto__pillar-num mono">03</span>
+      <p class="manifesto__pillar-text">Shows which assumptions <span class="title--serif">drive the case.</span></p>
+    </li>
+    <li class="manifesto__pillar">
+      <span class="manifesto__pillar-num mono">04</span>
+      <p class="manifesto__pillar-text">Stress-tests <span class="title--serif">the logic behind the case.</span></p>
+    </li>
+  </ol>
+</section>
+
+<!-- ──────────────────────  CTA / 08 — Monolith (single calm statement)  ────────────────────── -->
+<section class="scene cta reveal-host" id="cta" data-scene="08" data-screen-label="08 Close">
+  <div class="cta__monolith">
+
+    <h2 class="cta__statement reveal-item" style="--i:1">
+      Bring the unanswered questions <em class="cta__statement-em">into the room</em> before capital moves.
+    </h2>
+
+    <div class="cta__action reveal-item" style="--i:5">
+      <a href="mailto:demo@icterminal.com" class="cta__btn">
+        <span class="cta__btn-text">Request a diligence review</span>
+        <span class="cta__btn-arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ──────────────────────  FOOTER  ────────────────────── -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__links mono">
+      <a href="#process">Process</a>
+      <a href="#surface">Surface</a>
+      <a href="#demo">Demo</a>
+      <a href="#output">Output</a>
+      <a href="mailto:demo@icterminal.com">Contact</a>
+    </div>
+  </div>
+  <div class="footer__bottom mono">
+    <span>© 2026 IC_TERMINAL · institutional research systems</span>
+  </div>
+</footer>
+
+<script src="app.js?v=nav3-3"></script>
+
+<!-- ───────── Tweaks panel (3 expressive controls) ───────── -->
+<div id="tweaks-root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="tweaks.jsx"></script>
+</body>
+</html>
