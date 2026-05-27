@@ -3316,3 +3316,80 @@ body.tn-acc-amber .problem__inputs-item { color: var(--text); }
   }
   .prc__meta { text-align: left; }
 }
+
+/* ───────── CTA form ───────── */
+
+.cta__form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 24px;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.cta__field {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--text-3);
+  border-radius: 0;
+  padding: 10px 0;
+  font-family: var(--mono);
+  font-size: 15px;
+  letter-spacing: .02em;
+  color: var(--text);
+  text-align: center;
+  outline: none;
+  transition: border-color .25s var(--ease);
+}
+
+.cta__field::placeholder {
+  color: var(--text-3);
+  opacity: .7;
+}
+
+.cta__field:focus {
+  border-bottom-color: var(--blue);
+}
+
+.cta__field:invalid:not(:placeholder-shown) {
+  border-bottom-color: var(--red);
+}
+
+.cta__honeypot {
+  position: absolute !important;
+  left: -10000px !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.cta__error {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--red);
+  letter-spacing: .04em;
+  text-align: center;
+}
+
+/* preserve .cta__btn appearance now that it's a <button> instead of <a> */
+button.cta__btn {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-align: inherit;
+}
+
+button.cta__btn:disabled {
+  opacity: .4;
+  pointer-events: none;
+}
