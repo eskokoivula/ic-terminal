@@ -666,12 +666,30 @@ still begins with&nbsp;<span class="problem__title--serif">fragments.</span></h2
       Bring the unanswered questions <em class="cta__statement-em">into the room</em> before capital moves.
     </h2>
 
-    <div class="cta__action reveal-item" style="--i:5">
-      <a href="mailto:demo@icterminal.com" class="cta__btn">
+    <form id="cta-form" class="cta__action cta__form reveal-item" style="--i:5" novalidate>
+      <input
+        type="email"
+        id="cta-email"
+        name="email"
+        class="cta__field"
+        placeholder="your work email"
+        autocomplete="email"
+        required
+      />
+      <input
+        type="text"
+        name="website"
+        class="cta__honeypot"
+        tabindex="-1"
+        autocomplete="off"
+        aria-hidden="true"
+      />
+      <button type="submit" class="cta__btn">
         <span class="cta__btn-text">Request a diligence review</span>
         <span class="cta__btn-arrow" aria-hidden="true">↗</span>
-      </a>
-    </div>
+      </button>
+      <p class="cta__error" id="cta-error" hidden></p>
+    </form>
   </div>
 </section>
 
