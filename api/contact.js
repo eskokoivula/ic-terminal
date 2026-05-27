@@ -58,12 +58,14 @@ export default async function handler(req, res) {
   }
 
   // 2) submitter confirmation — best effort; failure logs but does not fail the request
+  // HTML body prevents Gmail/Outlook from collapsing "— IC_Terminal" as a signature
   try {
     await resend.emails.send({
       from: 'IC_Terminal <noreply@ic-terminal.com>',
       to: email,
       subject: 'Request received',
-      text: `Hi!\n\nThank you for your request.\n\nWe've received your submission. A human will follow up shortly with next steps.\n— IC_Terminal`,
+      html: `<p>Hi!</p><p>Thank you for your request.</p><p>We've received your submission. A human will follow up shortly with next steps.</p><p>— IC_Terminal</p>`,
+      text: `Hi!\n\nThank you for your request.\n\nWe've received your submission. A human will follow up shortly with next steps.\n\n— IC_Terminal`,
     });
   } catch (err) {
     console.error('Resend error (confirmation):', err);
