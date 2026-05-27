@@ -3393,3 +3393,89 @@ button.cta__btn:disabled {
   opacity: .4;
   pointer-events: none;
 }
+
+/* ───────── ACK overlay ───────── */
+
+.ack {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .35s var(--ease);
+}
+
+.ack[hidden] {
+  display: none;
+}
+
+.ack.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ack__veil {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, .72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  cursor: pointer;
+}
+
+.ack__card {
+  position: relative;
+  z-index: 1;
+  max-width: 520px;
+  padding: 56px 64px 48px;
+  background: #0a0c16;
+  border: 1px solid var(--text-3);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, .6);
+  text-align: center;
+}
+
+.ack__close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: transparent;
+  border: 0;
+  color: var(--text-3);
+  font-family: var(--mono);
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 6px 8px;
+  transition: color .2s var(--ease);
+}
+
+.ack__close:hover,
+.ack__close:focus-visible {
+  color: var(--text);
+  outline: none;
+}
+
+.ack__line {
+  margin: 0 0 14px;
+  font-family: var(--mono);
+  font-size: 22px;
+  letter-spacing: -.01em;
+  color: var(--text);
+}
+
+.ack__sub {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--text-3);
+  letter-spacing: .02em;
+}
+
+.ack__sub em {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  color: var(--blue);
+  font-weight: 400;
+}
