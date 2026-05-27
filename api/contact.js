@@ -63,7 +63,7 @@ export default async function handler(req, res) {
       from: 'IC_Terminal <noreply@ic-terminal.com>',
       to: email,
       subject: 'Request received',
-      text: `Thank you for your request.\n\nWe've received your submission. A human will follow up shortly with next steps.\n\n— IC Terminal`,
+      text: `Hi!\n\nThank you for your request.\n\nWe've received your submission. A human will follow up shortly with next steps.\n\n— IC_Terminal`,
     });
   } catch (err) {
     console.error('Resend error (confirmation):', err);
