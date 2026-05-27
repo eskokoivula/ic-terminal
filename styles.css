@@ -3326,7 +3326,7 @@ body.tn-acc-amber .problem__inputs-item { color: var(--text); }
   gap: 40px;
   width: 100%;
   max-width: 640px;
-  margin: 0 auto;
+  margin: clamp(48px, 6vw, 80px) auto 0;
 }
 
 .cta__field {
