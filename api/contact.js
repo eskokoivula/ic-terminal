@@ -43,6 +43,7 @@ export default async function handler(req, res) {
     return res.status(429).json({ error: 'Too many requests' });
   }
 
+  // 1) admin notification — required; failure here surfaces to the user
   try {
     await resend.emails.send({
       from: 'IC_Terminal <noreply@ic-terminal.com>',
@@ -51,9 +52,23 @@ export default async function handler(req, res) {
       subject: 'New diligence review request',
       text: `New request from: ${email}\n\nSubmitted at: ${new Date().toISOString()}\nIP: ${ip}`,
     });
-    return res.status(200).json({ ok: true });
   } catch (err) {
-    console.error('Resend error:', err);
+    console.error('Resend error (admin):', err);
     return res.status(500).json({ error: 'Send failed' });
   }
+
+  // 2) submitter confirmation — best effort; failure logs but does not fail the request
+  try {
+    await resend.emails.send({
+      from: 'IC_Terminal <noreply@ic-terminal.com>',
+      to: email,
+      subject: 'Request received',
+      text: `Thank you for your request.\n\nWe've received your submission. A human will follow up shortly with next steps.\n\n— IC Terminal`,
+    });
+  } catch (err) {
+    console.error('Resend error (confirmation):', err);
+    // continue — admin was already notified
+  }
+
+  return res.status(200).json({ ok: true });
 }
