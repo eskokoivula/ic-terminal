@@ -950,4 +950,85 @@
     if ('ResizeObserver' in window) new ResizeObserver(schedule).observe(spine);
     document.fonts && document.fonts.ready && document.fonts.ready.then(alignLine);
   }
+
+  /* ──────────  CTA request form → ACK overlay  ────────── */
+  {
+    const form = document.getElementById('cta-form');
+    if (form) {
+      const emailInput = form.querySelector('#cta-email');
+      const honeypot   = form.querySelector('[name="website"]');
+      const submitBtn  = form.querySelector('.cta__btn');
+      const errorEl    = form.querySelector('#cta-error');
+
+      const ack       = document.getElementById('ack');
+      const ackVeil   = ack.querySelector('.ack__veil');
+      const ackClose  = ack.querySelector('.ack__close');
+      let lastFocus = null;
+
+      function openAck() {
+        lastFocus = document.activeElement;
+        ack.hidden = false;
+        ack.setAttribute('aria-hidden', 'false');
+        ack.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        ackClose.focus();
+      }
+
+      function closeAck() {
+        ack.classList.remove('is-open');
+        ack.setAttribute('aria-hidden', 'true');
+        ack.hidden = true;
+        document.body.style.overflow = '';
+        if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+      }
+
+      function showError(msg) {
+        errorEl.textContent = msg;
+        errorEl.hidden = false;
+      }
+
+      function clearError() {
+        errorEl.hidden = true;
+        errorEl.textContent = '';
+      }
+
+      ackClose.addEventListener('click', closeAck);
+      ackVeil.addEventListener('click', closeAck);
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && ack.classList.contains('is-open')) closeAck();
+      });
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        clearError();
+
+        if (!form.checkValidity()) {
+          emailInput.reportValidity();
+          return;
+        }
+
+        submitBtn.disabled = true;
+
+        try {
+          const res = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              email: emailInput.value.trim(),
+              website: honeypot.value, // honeypot — bots fill this; server silent-drops
+            }),
+          });
+
+          if (!res.ok) throw new Error('bad response');
+
+          openAck();
+          form.reset();
+        } catch (err) {
+          showError('Could not send. Please try again or email contact@ic-terminal.com directly.');
+        } finally {
+          submitBtn.disabled = false;
+        }
+      });
+    }
+  }
 })();
