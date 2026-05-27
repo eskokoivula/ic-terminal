@@ -3378,18 +3378,8 @@ body.tn-acc-amber .problem__inputs-item { color: var(--text); }
   text-align: center;
 }
 
-/* preserve .cta__btn appearance now that it's a <button> instead of <a> */
-button.cta__btn {
-  background: transparent;
-  border: 0;
-  padding: 0;
-  font: inherit;
-  color: inherit;
-  cursor: pointer;
-  text-align: inherit;
-}
-
-button.cta__btn:disabled {
+/* the <button> uses the existing .cta__btn pill styles defined earlier; only add disabled state */
+.cta__btn:disabled {
   opacity: .4;
   pointer-events: none;
 }
