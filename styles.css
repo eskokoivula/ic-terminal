@@ -3384,6 +3384,30 @@ body.tn-acc-amber .problem__inputs-item { color: var(--text); }
   pointer-events: none;
 }
 
+.cta__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  margin-bottom: -8px;
+}
+
+.cta__label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.cta__required {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
 /* ───────── ACK overlay ───────── */
 
 .ack {
