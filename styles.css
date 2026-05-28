@@ -1151,7 +1151,7 @@ body.tn-acc-amber .problem__inputs-item { color: var(--text); }
   --active-i: 0;
   --col-count: 9;
   position: relative;
-  margin-top: clamp(48px, 5vw, 80px);
+  margin-top: clamp(96px, 8vw, 140px);
 }
 
 /* Head: small label + rule + meta — top edge of the architecture */
