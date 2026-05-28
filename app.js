@@ -59,7 +59,7 @@
   const slots = Array.from(document.querySelectorAll('.rotator__slot'));
   const indices = Array.from(document.querySelectorAll('.px'));
   const bar = document.getElementById('rotator-bar');
-  const CYCLE_MS = 3000;
+  const CYCLE_MS = 2100;
   const WORD_STAGGER = 95;
 
   // Read --tempo live so Tweaks can re-pace motion without reload.
@@ -819,6 +819,11 @@
       itemIO.unobserve(el);
       el.classList.remove('is-revealed');
     });
+    /* Trigger when the section's TOP enters the upper 60% of viewport.
+       Threshold-based intersection breaks on tall sections + small
+       viewports (mobile): with output ~3200px and viewport 812px, no
+       threshold above ~0.18 can ever be reached. rootMargin-only triggers
+       are reliable across viewport sizes. */
     const outputIO = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
@@ -826,7 +831,7 @@
           outputIO.disconnect();
         }
       });
-    }, { threshold: 0.2, rootMargin: '-20% 0px -10% 0px' });
+    }, { threshold: 0, rootMargin: '0px 0px -40% 0px' });
     outputIO.observe(outputSec);
   }
 
