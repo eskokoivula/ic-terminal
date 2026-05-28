@@ -1144,17 +1144,6 @@ body.tn-acc-amber .problem__inputs-item { color: var(--text); }
   letter-spacing: -0.022em;
   line-height: 1.0;
 }
-.surface__line--coda::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: clamp(40px, 5vw, 60px);
-  height: 1px;
-  background: var(--blue);
-  opacity: 0.9;
-}
-
 .surface__list { display: none; }
 
 /* ─────────  Agent spine (.hspine) – horizontal evidence layer  ───────── */
