@@ -3396,6 +3396,7 @@ body.tn-acc-amber .problem__inputs-item { color: var(--text); }
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  text-align: left;
   color: var(--text-3);
 }
 
