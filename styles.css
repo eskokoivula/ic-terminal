@@ -2864,7 +2864,7 @@ body.tn-acc-amber .problem__inputs-item { color: var(--text); }
    ============================================================ */
 .cta {
   padding-top: clamp(160px, 18vw, 280px);
-  padding-bottom: clamp(180px, 20vw, 320px);
+  padding-bottom: clamp(96px, 10vw, 160px);
   text-align: center;
 }
 .cta__monolith {
