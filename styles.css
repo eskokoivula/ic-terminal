@@ -3384,6 +3384,8 @@ body.tn-acc-amber .problem__inputs-item { color: var(--text); }
 .cta__field {
   display: block;
   width: 100%;
+  max-width: 380px;
+  align-self: center;
   box-sizing: border-box;
   background: transparent;
   border: 0;
