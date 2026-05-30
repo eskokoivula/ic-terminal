@@ -774,12 +774,47 @@ still begins with&nbsp;<span class="problem__title--serif">fragments.</span></h2
 
 <script src="app.js?v=nav3-4"></script>
 
-<!-- ───────── Tweaks panel (3 expressive controls) ───────── -->
+<!-- ───────── Tweaks panel — dev-only design tool ─────────
+     The editor host loads this page in an iframe and posts __activate_edit_mode.
+     Its React + ReactDOM + Babel + JSX toolchain (~4MB) is therefore loaded ONLY
+     when framed (the editor), on localhost, or with ?tweaks — never for production
+     visitors. All default tweak values are already baked into styles.css :root,
+     so skipping this in production does not change the page. -->
 <div id="tweaks-root"></div>
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-<script type="text/babel" src="tweaks-panel.jsx"></script>
-<script type="text/babel" src="tweaks.jsx"></script>
+<script>
+(function () {
+  var inEditor = window.self !== window.top;          // editor loads us in an iframe
+  var devHost  = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+  var forced   = /[?&]tweaks\b/.test(location.search);
+  if (!(inEditor || devHost || forced)) return;       // production: load nothing
+
+  var cdn = [
+    { src: 'https://unpkg.com/react@18.3.1/umd/react.development.js',
+      integrity: 'sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L' },
+    { src: 'https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js',
+      integrity: 'sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm' },
+    { src: 'https://unpkg.com/@babel/standalone@7.29.0/babel.min.js',
+      integrity: 'sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y' }
+  ];
+  var i = 0;
+  (function next() {
+    if (i === cdn.length) {                            // CDN libs ready → add JSX, transpile
+      ['tweaks-panel.jsx', 'tweaks.jsx'].forEach(function (f) {
+        var s = document.createElement('script');
+        s.type = 'text/babel';
+        s.src = f;
+        document.body.appendChild(s);
+      });
+      if (window.Babel && window.Babel.transformScriptTags) window.Babel.transformScriptTags();
+      return;
+    }
+    var c = cdn[i++], s = document.createElement('script');
+    s.src = c.src; s.integrity = c.integrity; s.crossOrigin = 'anonymous';
+    s.onload = next;
+    s.onerror = function () { console.warn('[tweaks] failed to load', c.src); };
+    document.body.appendChild(s);
+  })();
+})();
+</script>
 </body>
 </html>
