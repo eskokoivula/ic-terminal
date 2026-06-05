@@ -7,32 +7,39 @@ Single-page landing site for an institutional research product. Hand-written HTM
 - `index.html` — the page
 - `styles.css` — all styles, hand-written, no preprocessor
 - `app.js` — IIFE, plain ES2017
-- `tweaks-panel.jsx`, `tweaks.jsx` — Babel-transpiled in-browser, dev-only design tweaks panel
+- `tweaks-panel.jsx`, `tweaks.jsx` — Babel-transpiled in-browser, dev-only design tweaks panel (loads only in the editor / `localhost` / `?tweaks`, never in production)
 - `assets/` — logo PNG, hero video, process loop (`.webm` + `.mp4` fallback)
 
 There is no bundler. Serve the folder with anything that handles static files (`python3 -m http.server`, `npx serve`, etc.) and open `index.html`.
 
-## Open tasks
+## Status — Phases 1–3 complete & live
 
-In order:
+All three roadmap tasks below are **done and live** at <https://ic-terminal.com> (updated 2026-05-30). Kept for reference — the design constraints noted inside them still apply. Optional follow-ups are listed after task 3.
 
-1. **Wire the contact CTA to a real message endpoint.**
+Original roadmap (done):
+
+1. ✅ **DONE — Contact CTA wired to a real endpoint.** Live: `api/contact.js` → Resend → `contact@ic-terminal.com`, with honeypot + rate limit + ack overlay. (Original brief below.)
    - The CTA is now an inline form, not a `mailto:` link. Markup is `<form id="cta-form" class="cta__action cta__form">` near the bottom of `index.html`: one underlined email field (`#cta-email`, `name="email"`, `required`) above the existing `.cta__btn` (now `type="submit"`).
    - Submission handler lives in `app.js` in the `CTA request form → ACK overlay` block (search for `cta-form`). It runs `form.checkValidity()`, opens the ack overlay on success, resets the form. There is a `// TODO: POST to real endpoint here` marker — that's where the network call goes.
    - POST `{ email }` to a serverless endpoint. Recommend Resend or Postmark. Deliver to `demo@icterminal.com`. Add a honeypot field (hidden, must be empty) and a rate limit. On network failure, surface an inline error under the field — do not open the ack.
    - Nav-panel and footer still use `mailto:demo@icterminal.com`. Leave those — they are escape hatches if the form errors.
    - Do not restyle `.cta__btn` or `.cta__field` — they're tuned to the page's typographic register. No rounded SaaS pills, no gradient buttons.
 
-2. **Mobile optimization.**
+2. ✅ **DONE — Mobile optimization.**
    - Target ≥375px width.
    - Test the long sections: Process, Surface/hspine, Output dashboard, Manifesto plaque, CTA.
    - Stack columns where needed, scale type down, kill side gutters that suffocate the headline.
    - Staged animations stay on mobile; accept lower keyframe complexity if needed.
 
-3. **Domain + deploy.**
+3. ✅ **DONE — Domain + deploy.** Live at `ic-terminal.com` (+ `www` 308-redirect), Vercel, Let's Encrypt SSL; OG card (`assets/og-image.png`) + favicon set added.
    - Static site — Vercel or Cloudflare Pages.
    - Wire a custom domain.
    - Add proper `meta` (OG image, favicon — `assets/logo-glow.png` exists).
+
+### Optional follow-ups (not done)
+
+- Drop the `?v=navNN` cache-bust query strings once you trust the CDN cache headers.
+- (Maybe) Check whether F-Secure Browsing Protection hides the nav for Finnish visitors broadly — a reported "missing nav" was traced to F-Secure on one machine, **not the site**. See `README.md` / `HANDOFF.md`.
 
 ## Things that look ad-hoc but are intentional — do not refactor
 
